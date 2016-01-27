@@ -1,0 +1,9 @@
+[user]
+	name = ypei
+	email = ypei@cs.utexas.edu
+[core]
+	editor = vim
+[merge]
+	tool = vimdiff
+[credential]
+	helper = osxkeychain
