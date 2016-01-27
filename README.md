@@ -1,1 +1,8 @@
-# homeconfig file from my mac
+# Home config file from my mac
+
+Including catalog:
+**.vim**
+**.bash**
+**.ssh**
+**.gitconfig**
+
