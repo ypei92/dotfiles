@@ -4,7 +4,13 @@ set rtp+=~/.vim/bundle/Vundle.vim
 
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
-call vundle#end()            
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'tpope/vim-fugitive'
+Plugin 'mhinz/vim-signify'
+Plugin 'edkolev/promptline.vim'
+"Plugin 'Valloric/YouCompleteMe'
+call vundle#end()
 
 filetype plugin indent on   " load file type plugin and related indent info
 
@@ -17,12 +23,14 @@ set cursorline
 
 set confirm                 "Pop up confirmation when editing RO or unsaved
 set wildmenu                "For auto filling   FIXME:don't know what that is
+set encoding=utf-8
 
 "Show line number, command, status line and so on"
 set history=1024            "The length of the history need to be recorded
 set ruler
 set rulerformat=%20(%2*%<%f%=\ %m%r\ %3l\ %c\ %p%%%)
-set colorcolumn=80          "draw a vertical colored line at 80 FIXME:add color
+set colorcolumn=80          "draw a vertical colored line at 80
+highlight ColorColumn ctermbg=red
 "set colorcolumn=120        "draw a vertical colored line at 120
 set number
 "set relativenumber
@@ -63,7 +71,7 @@ set listchars=tab:\|\ ,trail:.,extends:>,precedes:<,eol:$
 
 " Set mouse permission: all
 set mouse=a
-set selection=exclusive 
+set selection=exclusive
 set selectmode=mouse,key
 
 " Set width of a chinese character
@@ -71,11 +79,33 @@ set ambiwidth=double
 
 " Status line config
 set laststatus=2            "always show the status line
-:highlight OverLength ctermbg=red ctermfg=white guibg=red guifg=white
-:match OverLength '\%81v.*'
-"set statusline=            "FIXME
 
-" CTags settings FIXME
+" Vim airline plugin setting
+"let g:airline_powerline_fonts = 1
+let g:airline_theme='cobalt2'
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#tab_nr_type = 1        "tab number
+let g:airline#extensions#tabline#show_tab_nr = 1
+let g:airline#extensions#tabline#formatter = 'default'
+
+let g:airline#extensions#hunks#enabled = 1
+let g:airline#extensions#hunks#hunk_symbols = ['+', '~', '-']
+
+"let guifont='~/.local/share/fonts/test.ttf'
+"let g:airline#extensions#hunks#non_zero_only = 0
+
+" powerline symbols FIXME
+"let g:airline_left_sep = '>'
+"let g:airline_right_sep = '<<'
+"function! AirlineInit()
+"    let g:airline_section_a = airline#section#create(['mode', ' ', 'branch'])
+"    let g:airline_section_b = airline#section#create_left(['ffenc', 'hunks', '%f'])
+"    let g:airline_section_c = airline#section#create(['filetype'])
+"    let g:airline_section_x = airline#section#create(['%P'])
+"    let g:airline_section_y = airline#section#create(['%B'])
+"    let g:airline_section_z = airline#section#create_right(['%l', '%c'])
+"endfunction
+"autocmd VimEnter * call AirlineRefresh()
 
 " Auto bio info
 autocmd BufNewFile *.py,*.cc,*.sh,*.java exec ":call SetTitle()"
