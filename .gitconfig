@@ -5,5 +5,12 @@
 	editor = vim
 [merge]
 	tool = vimdiff
-[credential]
-	helper = osxkeychain
+[color]
+    diff = auto
+    status = auto
+    branch = auto
+    interactive = auto
+    ui = true
+    pager = true
+#[credential]
+#	helper = osxkeychain
