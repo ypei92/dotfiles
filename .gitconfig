@@ -5,6 +5,11 @@
 	editor = vim
 [merge]
 	tool = vimdiff
+[github]
+    user = ypei92
+[alias]
+    graph = log --graph --oneline --decorate --color
+    st = status
 [color]
     diff = auto
     status = auto
@@ -12,5 +17,3 @@
     interactive = auto
     ui = true
     pager = true
-#[credential]
-#	helper = osxkeychain
