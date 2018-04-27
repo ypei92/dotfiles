@@ -9,4 +9,4 @@ Including catalog:
 **.inputrc**
 **.wgetrc**
 
-The git prompt repo is a modified version of repo [Github](https://github.com/magicmonty/bash-git-prompt).
+The git prompt repo is a modified version of repo [bash-git-prompt](https://github.com/magicmonty/bash-git-prompt).
