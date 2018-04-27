@@ -38,3 +38,27 @@ set convert-meta off
 
 # Use Alt/Meta + Delete to delete the preceding word
 "\e[3;3~": kill-word
+
+$if Bash
+  # Don't ring bell on completion
+  set bell-style none
+
+  # or, don't beep at me - show me
+  set bell-style visible
+
+  # Expand homedir name
+  set expand-tilde on
+
+  # Append "/" to all dirnames
+  set mark-directories on
+  set mark-symlinked-directories on
+
+  # Match all files
+  set match-hidden-files on
+
+  # 'Magic Space'
+  # Insert a space character then performs a history expansion in the line
+  Space: magic-space
+$endif
+
+
