@@ -90,11 +90,13 @@ let g:airline#extensions#tabline#formatter = 'default'
 
 let g:airline#extensions#hunks#enabled = 1
 let g:airline#extensions#hunks#hunk_symbols = ['+', '~', '-']
-
-"let guifont='~/.local/share/fonts/test.ttf'
 "let g:airline#extensions#hunks#non_zero_only = 0
 
+" Clear buffer automatically after a tab is closed
+autocmd BufDelete * call airline#extensions#tabline#buflist#invalidate()
+
 " powerline symbols FIXME
+"let guifont='~/.local/share/fonts/test.ttf'
 "let g:airline_left_sep = '>'
 "let g:airline_right_sep = '<<'
 "function! AirlineInit()
