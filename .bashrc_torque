@@ -1,0 +1,54 @@
+# ~/.bashrc # used for bash non-login shells.  # non-login shells include: # * X sessions (xdm, gdm, kdm) # * X Terminals (xterm, konsole, gnome-terminal)
+# * running remote commands via ssh
+
+# NOTE: some programs (ie, winscp) fail if this generates any output.
+
+# first, source the system bashrc
+if [ -r /etc/bashrc ]; then
+    . /etc/bashrc
+fi
+
+# MAIL is used by mutt
+export MAIL=/mail/${USER}/Maildir/
+
+# default printer: change this to suit your needs.
+# pr3swd is the duplex queue on our black and white laser printer in the
+# southwest quadrant of the 3rd floor of ICES.
+export PRINTER=pr3swd
+
+# default editor: this is used by svn, etc.
+# the only safe default for EDITOR is one which instructs the user how to quit.
+# most users will change this to vim or emacs.
+export EDITOR=nano
+
+# uncomment this to use a prompt which indicates exit status
+#if [ -r /etc/bash/prompt ]; then
+#    . /etc/bash/prompt
+#fi
+
+# pine aliases
+alias alpine='alpine -passfile ~/.pinepass'
+alias pine='alpine -passfile ~/.pinepass'
+
+for file in ~/{.aliases,.bash-git-prompt/gitprompt.sh};
+do
+    [ -r "$file" ] && [ -f "$file" ] && source "$file";
+done;
+unset file;
+
+export PATH=/workspace/ypei/capri-slambench/:/h2/ypei/UTCS/lib/python3/bin:$PATH
+
+export LD_LIBRARY_PATH=~/UTCS/lib/papi-5.4.1/src:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=/h2/ypei/UTCS/lib/pycubist:/workspace/ypei/capri-slambench/lib/Cubist/src:$LD_LIBRARY_PATH
+
+export OPENCL_LIBRARY=/usr/lib64/nvidia/libOpenCL.so:$OPENCL_LIBRARY
+export CONTROLLER_ROOT=/workspace/ypei/capri-slambench
+export SLAMBENCH_ROOT=/workspace/ypei/slambench
+export CAPRI_EXP_OUTPUT=/workspace/ypei/capri-output
+export ICLNUIM_ROOT=/workspace/ypei/slambench/icl-nuim-raw
+eval `dircolors ~/.dir_colors`
+
+#source ~/UTCS/GaloisCpp/exp/scripts/iss_load_modules.sh
+#export CC=$GCC_BIN/gcc
+#export CXX=$GCC_BIN/g++
+
