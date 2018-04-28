@@ -76,7 +76,8 @@ override_git_prompt_colors() {
 
     ## indicator if the last command returned with an exit code of 0 or not
     GIT_PROMPT_COMMAND_OK=""
-    GIT_PROMPT_COMMAND_FAIL="${Red}✘-_LAST_COMMAND_STATE_ "
+    GIT_PROMPT_COMMAND_FAIL=""
+    # GIT_PROMPT_COMMAND_FAIL="${Red}✘-_LAST_COMMAND_STATE_ "
 
     ## Omit the upstream name for now
     GIT_PROMPT_UPSTREAM=""
