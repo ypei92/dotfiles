@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-source ~/.bash-git-prompt/.gitprompt-config.sh
+source ~/.bash-git-prompt/.git-prompt-config.sh
 
 function async_run() {
   {
