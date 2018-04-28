@@ -105,8 +105,7 @@ let g:tmuxline_separators = {
     \ 'right_alt' : '|',
     \ 'space' : ' '}
 
-"let g:tmuxline_preset = 'full'
-let g:tmuxline_preset = 'crosshair'
+let g:tmuxline_preset = 'ypei_crosshair'
 
 " powerline symbols FIXME
 "let guifont='~/.local/share/fonts/test.ttf'

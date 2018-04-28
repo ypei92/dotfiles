@@ -1,4 +1,4 @@
-fun! tmuxline#presets#crosshair#get()
+fun! tmuxline#presets#ypei_crosshair#get()
   let bar = tmuxline#new()
 
   call bar.left.add('a', '#S')
