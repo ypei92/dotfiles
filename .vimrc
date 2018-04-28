@@ -8,7 +8,8 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'tpope/vim-fugitive'
 Plugin 'mhinz/vim-signify'
-Plugin 'edkolev/promptline.vim'
+Plugin 'edkolev/tmuxline.vim'
+"Plugin 'edkolev/promptline.vim'
 "Plugin 'Valloric/YouCompleteMe'
 call vundle#end()
 
@@ -94,6 +95,18 @@ let g:airline#extensions#hunks#hunk_symbols = ['+', '~', '-']
 
 " Clear buffer automatically after a tab is closed
 autocmd BufDelete * call airline#extensions#tabline#buflist#invalidate()
+
+" Vim tmuxline plugin settin
+let g:tmuxline_powerline_separators = 0
+let g:tmuxline_separators = {
+    \ 'left' : '',
+    \ 'left_alt': '|',
+    \ 'right' : '',
+    \ 'right_alt' : '|',
+    \ 'space' : ' '}
+
+"let g:tmuxline_preset = 'full'
+let g:tmuxline_preset = 'crosshair'
 
 " powerline symbols FIXME
 "let guifont='~/.local/share/fonts/test.ttf'
