@@ -22,6 +22,8 @@
 # a patch to the cygwin mailing list
 
 # User dependent .bashrc file
+export TERM='xterm-256color';
+
 source ~/UTCS/plugins/mintty-colors-solarized/sol.dark
 
 for file in ~/{.aliases,.bash-git-prompt/gitprompt.sh};
