@@ -15,7 +15,7 @@ call vundle#end()
 
 filetype plugin indent on   " load file type plugin and related indent info
 
-"Syntax and theme
+"" Syntax and theme
 syntax on
 set t_Co=256
 set background=dark
@@ -26,7 +26,7 @@ set confirm                 "Pop up confirmation when editing RO or unsaved
 set wildmenu                "For auto filling   FIXME:don't know what that is
 set encoding=utf-8
 
-"Show line number, command, status line and so on"
+"" Show line number, command, status line and so on"
 set history=1024            "The length of the history need to be recorded
 set ruler
 set rulerformat=%20(%2*%<%f%=\ %m%r\ %3l\ %c\ %p%%%)
@@ -41,15 +41,15 @@ set laststatus=2
 set cmdheight=2
 set scrolloff=3
 
-"Turn off annoying error sound
+"" Turn off annoying error sound
 set novisualbell
 set noerrorbells
 
-"Configure backspace to be able to across two lines
+"" Configure backspace to be able to across two lines
 set backspace=2
 set whichwrap+=<,>,h,l
 
-"Tab and indent
+"" Tab and indent
 set tabstop=4               "Let tab equals 4 spaces
 set softtabstop=4
 set shiftwidth=4
@@ -60,7 +60,7 @@ set iskeyword+=_,$,@,%,#,-
 set textwidth=80
 "set nowrap
 
-"Text search and replace
+"" Text search and replace
 set showmatch               "Highlight matched parenthesis
 set incsearch               "Highlight in process
 set hlsearch                "Highlight the string found
@@ -70,18 +70,18 @@ set magic
 set nowrapscan
 set listchars=tab:\|\ ,trail:.,extends:>,precedes:<,eol:$
 
-" Set mouse permission: all
+"" Set mouse permission: all
 set mouse=a
 set selection=exclusive
 set selectmode=mouse,key
 
-" Set width of a chinese character
+"" Set width of a chinese character
 set ambiwidth=double
 
-" Status line config
+"" Status line config
 set laststatus=2            "always show the status line
 
-" Vim airline plugin setting
+"" Vim airline plugin setting
 "let g:airline_powerline_fonts = 1
 let g:airline_theme='cobalt2'
 let g:airline#extensions#tabline#enabled = 1
@@ -93,10 +93,10 @@ let g:airline#extensions#hunks#enabled = 1
 let g:airline#extensions#hunks#hunk_symbols = ['+', '~', '-']
 "let g:airline#extensions#hunks#non_zero_only = 0
 
-" Clear buffer automatically after a tab is closed
+"" Clear buffer automatically after a tab is closed
 autocmd BufDelete * call airline#extensions#tabline#buflist#invalidate()
 
-" Vim tmuxline plugin settin
+"" Vim tmuxline plugin settin
 let g:tmuxline_powerline_separators = 0
 let g:tmuxline_separators = {
     \ 'left' : '',
@@ -107,21 +107,30 @@ let g:tmuxline_separators = {
 
 let g:tmuxline_preset = 'ypei_crosshair'
 
-" powerline symbols FIXME
+"" powerline symbols FIXME
 "let guifont='~/.local/share/fonts/test.ttf'
 "let g:airline_left_sep = '>'
 "let g:airline_right_sep = '<<'
-"function! AirlineInit()
-"    let g:airline_section_a = airline#section#create(['mode', ' ', 'branch'])
-"    let g:airline_section_b = airline#section#create_left(['ffenc', 'hunks', '%f'])
-"    let g:airline_section_c = airline#section#create(['filetype'])
-"    let g:airline_section_x = airline#section#create(['%P'])
-"    let g:airline_section_y = airline#section#create(['%B'])
-"    let g:airline_section_z = airline#section#create_right(['%l', '%c'])
-"endfunction
 "autocmd VimEnter * call AirlineRefresh()
 
-" Auto bio info
+"" Key mapping
+nmap ff <C-f>
+nmap bb <C-b>
+nmap oo <C-o>
+nmap vv <C-v>
+
+inoremap ( ()<Esc>i
+inoremap [ []<Esc>i
+inoremap { {}<Esc>i
+inoremap " ""<Esc>i
+
+nnoremap th :tabfirst<CR> 
+nnoremap tk :tabnext<CR> 
+nnoremap tj :tabprev<CR> 
+nnoremap gp :tabprev<CR> 
+nnoremap tl :tablast<CR> 
+
+"" Auto bio info
 autocmd BufNewFile *.py,*.cc,*.sh,*.java exec ":call SetTitle()"
 func SetTitle()
     if expand("%:e") == 'sh'
