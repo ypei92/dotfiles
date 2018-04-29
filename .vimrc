@@ -116,19 +116,17 @@ let g:tmuxline_preset = 'ypei_crosshair'
 "" Key mapping
 nmap ff <C-f>
 nmap bb <C-b>
-nmap oo <C-o>
+nmap go <C-o>
 nmap vv <C-v>
 
-inoremap ( ()<Esc>i
 inoremap [ []<Esc>i
 inoremap { {}<Esc>i
-inoremap " ""<Esc>i
 
-nnoremap th :tabfirst<CR> 
-nnoremap tk :tabnext<CR> 
-nnoremap tj :tabprev<CR> 
-nnoremap gp :tabprev<CR> 
-nnoremap tl :tablast<CR> 
+nnoremap th :tabfirst<CR>
+nnoremap tk :tabnext<CR>
+nnoremap tj :tabprev<CR>
+nnoremap gp :tabprev<CR>
+nnoremap tl :tablast<CR>
 
 "" Auto bio info
 autocmd BufNewFile *.py,*.cc,*.sh,*.java exec ":call SetTitle()"
