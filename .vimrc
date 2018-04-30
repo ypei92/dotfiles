@@ -8,7 +8,7 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'tpope/vim-fugitive'
 Plugin 'mhinz/vim-signify'
-Plugin 'edkolev/tmuxline.vim'
+"Plugin 'edkolev/tmuxline.vim'
 "Plugin 'edkolev/promptline.vim'
 "Plugin 'Valloric/YouCompleteMe'
 call vundle#end()
@@ -98,7 +98,7 @@ let g:airline#extensions#hunks#hunk_symbols = ['+', '~', '-']
 autocmd BufDelete * call airline#extensions#tabline#buflist#invalidate()
 
 "" Vim tmuxline plugin settin
-let g:tmuxline_powerline_separators = 0
+"let g:tmuxline_powerline_separators = 0
 "let g:tmuxline_preset = 'ypei_minimal'
 "let g:tmuxline_preset = 'minimal'  #perfert for new tmux
 
