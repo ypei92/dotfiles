@@ -88,6 +88,7 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#tab_nr_type = 1        "tab number
 let g:airline#extensions#tabline#show_tab_nr = 1
 let g:airline#extensions#tabline#formatter = 'default'
+"let g:airline#extensions#tmuxline#enabled = 0
 
 let g:airline#extensions#hunks#enabled = 1
 let g:airline#extensions#hunks#hunk_symbols = ['+', '~', '-']
@@ -105,7 +106,8 @@ let g:tmuxline_separators = {
     \ 'right_alt' : '|',
     \ 'space' : ' '}
 
-let g:tmuxline_preset = 'ypei_crosshair'
+"let g:tmuxline_preset = 'ypei_minimal'
+"let g:tmuxline_preset = 'minimal'
 
 "" powerline symbols FIXME
 "let guifont='~/.local/share/fonts/test.ttf'
