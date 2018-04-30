@@ -1,0 +1,18 @@
+umask 077
+
+for file in ~/{.aliases,.bash-git-prompt/gitprompt.sh};
+do
+    [ -r "$file" ] && [ -f "$file" ] && source "$file";
+done;
+unset file;
+
+export LD_LIBRARY_PATH=~/Desktop/cs383c/LAFF-NLA/BLISlab/lib/lib
+export BLAS_DIR=~/Desktop/cs383c/LAFF-NLA/BLISlab/lib
+export KMP_AFFINITY=compact
+#export PIN_HOME="/u/ypei/Desktop/cs395t-lin/sniper/pin_kit"
+export PIN_HOME="/scratch/cluster/haowu/smets/sniper/pin_kit"
+export CVSROOT="/project/broadway/cvsroot"
+
+eval `dircolors ~/.dir_colors`
+# export CLICOLOR=1
+# export LSCOLORS=exfxbEaEBxxEhEhBaDaCaD
