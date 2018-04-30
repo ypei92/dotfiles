@@ -1,10 +1,10 @@
 [user]
-	name = ypei
-	email = ypei@cs.utexas.edu
+    name = ypei
+    email = ypei@cs.utexas.edu
 [core]
-	editor = vim
+    editor = vim
 [merge]
-	tool = vimdiff
+    tool = vimdiff
 [github]
     user = ypei92
 [alias]
