@@ -99,15 +99,8 @@ autocmd BufDelete * call airline#extensions#tabline#buflist#invalidate()
 
 "" Vim tmuxline plugin settin
 let g:tmuxline_powerline_separators = 0
-let g:tmuxline_separators = {
-    \ 'left' : '',
-    \ 'left_alt': '|',
-    \ 'right' : '',
-    \ 'right_alt' : '|',
-    \ 'space' : ' '}
-
 "let g:tmuxline_preset = 'ypei_minimal'
-"let g:tmuxline_preset = 'minimal'
+"let g:tmuxline_preset = 'minimal'  #perfert for new tmux
 
 "" powerline symbols FIXME
 "let guifont='~/.local/share/fonts/test.ttf'
