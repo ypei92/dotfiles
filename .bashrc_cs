@@ -12,6 +12,7 @@ export KMP_AFFINITY=compact
 #export PIN_HOME="/u/ypei/Desktop/cs395t-lin/sniper/pin_kit"
 export PIN_HOME="/scratch/cluster/haowu/smets/sniper/pin_kit"
 export CVSROOT="/project/broadway/cvsroot"
+export PATH="$HOME/.tmux/bin:$PATH"
 
 eval `dircolors ~/.dir_colors`
 # export CLICOLOR=1
