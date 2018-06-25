@@ -114,8 +114,8 @@ nmap bb <C-b>
 nmap go <C-o>
 nmap vv <C-v>
 
-inoremap [ []<Esc>i
-inoremap { {}<Esc>i
+"inoremap [ []<Esc>i
+"inoremap { {}<Esc>i
 
 nnoremap th :tabfirst<CR>
 nnoremap tk :tabnext<CR>
