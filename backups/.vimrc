@@ -8,7 +8,9 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'tpope/vim-fugitive'
 Plugin 'mhinz/vim-signify'
-Plugin 'ycm-core/YouCompleteMe'
+"Plugin 'edkolev/tmuxline.vim'
+"Plugin 'edkolev/promptline.vim'
+"Plugin 'Valloric/YouCompleteMe'
 call vundle#end()
 
 filetype plugin indent on   " load file type plugin and related indent info
@@ -118,43 +120,14 @@ nmap vv <C-v>
 nnoremap th :tabfirst<CR>
 nnoremap tk :tabnext<CR>
 nnoremap tj :tabprev<CR>
+nnoremap gp :tabprev<CR>
 nnoremap tl :tablast<CR>
-cnoreabbrev <expr> tn getcmdtype() == ":" && getcmdline() == 'tn' ? 'tabnew' : 'tn'
-
-" For YCM
-cnoreabbrev <expr> gtype getcmdtype() == ":" && getcmdline() == 'gtype' ? 'YcmCompleter GetType' : 'gtype'
-cnoreabbrev <expr> gt getcmdtype() == ":" && getcmdline() == 'gt' ? 'YcmCompleter GoTo' : 'gt'
-cnoreabbrev <expr> gdef getcmdtype() == ":" && getcmdline() == 'gdef' ? 'YcmCompleter GoToDefinition' : 'gdef'
-cnoreabbrev <expr> gdec getcmdtype() == ":" && getcmdline() == 'gdec' ? 'YcmCompleter GoToDeclaration' : 'gdec'
-
-let g:ycm_complete_in_comments = 0
-let g:ycm_complete_in_strings = 1
-let g:ycm_key_list_stop_completion = ['<C-y>']
-
-let g:ycm_add_preview_to_completeopt="popup"
-let g:ycm_autoclose_preview_window_after_completion = 0
-let g:ycm_autoclose_preview_window_after_insertion = 0
-
-let g:ycm_filetype_blacklist = {
-      \ 'tagbar': 1,
-      \ 'notes': 1,
-      \ 'markdown': 1,
-      \ 'netrw': 1,
-      \ 'unite': 1,
-      \ 'text': 1,
-      \ 'vimwiki': 1,
-      \ 'pandoc': 1,
-      \ 'infolog': 1,
-      \ 'leaderf': 1,
-      \ 'mail': 1
-      \}
 
 "" Auto bio info
 autocmd BufNewFile *.py,*.cc,*.sh,*.java exec ":call SetTitle()"
 func SetTitle()
     if expand("%:e") == 'sh'
-        "call setline(1, "#!/bin/bash")
-        call setline(1, "#!/usr/local/bin/bash")
+        call setline(1, "#!/bin/bash")
         call setline(2, "")
         call setline(3, "# Author:\typei")
         call setline(4, "# Time:\t\t".strftime("%F %T"))
