@@ -48,8 +48,3 @@ export SLAMBENCH_ROOT=/workspace/ypei/slambench
 export CAPRI_EXP_OUTPUT=/workspace/ypei/capri-output
 export ICLNUIM_ROOT=/workspace/ypei/slambench/icl-nuim-raw
 eval `dircolors ~/.dir_colors`
-
-#source ~/UTCS/GaloisCpp/exp/scripts/iss_load_modules.sh
-#export CC=$GCC_BIN/gcc
-#export CXX=$GCC_BIN/g++
-

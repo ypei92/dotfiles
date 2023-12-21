@@ -1,8 +1,8 @@
-#homebrew=/usr/local/bin:/usr/local/sbin
+# PATH
 homebrew_sbin=/usr/local/sbin
 export PATH="$homebrew_sbin:$PATH"
 
-#Color
+# Color
 export CLICOLOR=1
 export LSCOLORS=exfxcxdxBxegedabagaCaD
 
@@ -11,4 +11,3 @@ do
     [ -r "$file" ] && [ -f "$file" ] && source "$file";
 done;
 unset file;
-
