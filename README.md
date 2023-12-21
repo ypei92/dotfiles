@@ -1,17 +1,18 @@
-# Home config file from mbp windows CentOS Odroid Ubuntu
+# Home config files when setting up new macOS/Linux systems
 
 Including catalog:
 **.vim**
+**.tmux**
 **.bash**
-**.bash_prompt**
-**.ssh**
+**.bash_prompt** a modified version of repo [bash-git-prompt](https://github.com/magicmonty/bash-git-prompt).
 **.gitconfig**
 **.inputrc**
-**.wgetrc**
+**.aliases**
 
-The git prompt repo is a modified version of repo [bash-git-prompt](https://github.com/magicmonty/bash-git-prompt).
+12/20/23 update:
+Refine scripts
 
 10/15/21 update:
 Add YouCompleteMe to vim; update .vimrc by adding commands using coabbrev
-Add bash-completion to bash, update mac LSCOLORS;
-Up to date tmux, add plugins: tpm, sidebar, resurrect, customized dracula theme
+Add bash-completion to bash, update macOS LSCOLORS;
+Add plugins to tmux: tpm, sidebar, resurrect, customized dracula theme
