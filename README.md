@@ -3,8 +3,8 @@
 Including catalog:
 **.vim**
 **.tmux**
-**.bash**
-**.bash_prompt** a modified version of repo [bash-git-prompt](https://github.com/magicmonty/bash-git-prompt).
+**.bashrc**
+**.bash_prompt ([bash-git-prompt](https://github.com/magicmonty/bash-git-prompt))**
 **.gitconfig**
 **.inputrc**
 **.aliases**
