@@ -1,4 +1,4 @@
-# Home config files when setting up new macOS/Linux systems
+# Config files when setting up new macOS/Linux systems
 
 Including catalog:
 **.vim**
