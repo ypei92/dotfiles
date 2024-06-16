@@ -48,9 +48,9 @@ set backspace=2
 set whichwrap+=<,>,h,l
 
 "" Tab and indent
-set tabstop=4               "Let tab equals 4 spaces
-set softtabstop=4
-set shiftwidth=4
+set tabstop=2               "Let tab equals 4 spaces
+set softtabstop=2
+set shiftwidth=2
 set expandtab
 set smartindent             "smart indent for C
 set autoindent
@@ -95,38 +95,21 @@ let g:airline#extensions#hunks#hunk_symbols = ['+', '~', '-']
 "" Clear buffer automatically after a tab is closed
 autocmd BufDelete * call airline#extensions#tabline#buflist#invalidate()
 
-"" Vim tmuxline plugin settin
-"let g:tmuxline_powerline_separators = 0
-"let g:tmuxline_preset = 'ypei_minimal'
-"let g:tmuxline_preset = 'minimal'  #perfert for new tmux
+"" Insert mode key mapping
+inoremap jj <Esc>
 
-"" powerline symbols FIXME
-"let guifont='~/.local/share/fonts/test.ttf'
-"let g:airline_left_sep = '>'
-"let g:airline_right_sep = '<<'
-"autocmd VimEnter * call AirlineRefresh()
+"" Visual mode key mapping
+xnoremap p pgvy
 
-"" Key mapping
-nmap ff <C-f>
-nmap bb <C-b>
-nmap go <C-o>
-nmap vv <C-v>
-
-"inoremap [ []<Esc>i
-"inoremap { {}<Esc>i
-
+"" Normal mode key mapping
+nnoremap go <C-o>
 nnoremap th :tabfirst<CR>
 nnoremap tk :tabnext<CR>
 nnoremap tj :tabprev<CR>
 nnoremap tl :tablast<CR>
 cnoreabbrev <expr> tn getcmdtype() == ":" && getcmdline() == 'tn' ? 'tabnew' : 'tn'
 
-" For YCM
-cnoreabbrev <expr> gtype getcmdtype() == ":" && getcmdline() == 'gtype' ? 'YcmCompleter GetType' : 'gtype'
-cnoreabbrev <expr> gt getcmdtype() == ":" && getcmdline() == 'gt' ? 'YcmCompleter GoTo' : 'gt'
-cnoreabbrev <expr> gdef getcmdtype() == ":" && getcmdline() == 'gdef' ? 'YcmCompleter GoToDefinition' : 'gdef'
-cnoreabbrev <expr> gdec getcmdtype() == ":" && getcmdline() == 'gdec' ? 'YcmCompleter GoToDeclaration' : 'gdec'
-
+"" For YCM
 let g:ycm_complete_in_comments = 0
 let g:ycm_complete_in_strings = 1
 let g:ycm_key_list_stop_completion = ['<C-y>']
@@ -149,22 +132,7 @@ let g:ycm_filetype_blacklist = {
       \ 'mail': 1
       \}
 
-"" Auto bio info
-autocmd BufNewFile *.py,*.cc,*.sh,*.java exec ":call SetTitle()"
-func SetTitle()
-    if expand("%:e") == 'sh'
-        "call setline(1, "#!/bin/bash")
-        call setline(1, "#!/usr/local/bin/bash")
-        call setline(2, "")
-        call setline(3, "# Author:\typei")
-        call setline(4, "# Time:\t\t".strftime("%F %T"))
-        call setline(5, "# Name:\t\t".expand("%"))
-        call setline(6, "# Version:\tV0.1")
-    else
-    "if expand("%:e") == 'py'
-        call setline(2, "# Author:\typei")
-        call setline(3, "# Time:\t\t".strftime("%F %T"))
-        call setline(4, "# Name:\t\t".expand("%"))
-        call setline(5, "# Version:\tV0.1")
-    endif
-endfunc
+cnoreabbrev <expr> gtype getcmdtype() == ":" && getcmdline() == 'gtype' ? 'YcmCompleter GetType' : 'gtype'
+cnoreabbrev <expr> gt getcmdtype() == ":" && getcmdline() == 'gt' ? 'YcmCompleter GoTo' : 'gt'
+cnoreabbrev <expr> gdef getcmdtype() == ":" && getcmdline() == 'gdef' ? 'YcmCompleter GoToDefinition' : 'gdef'
+cnoreabbrev <expr> gdec getcmdtype() == ":" && getcmdline() == 'gdec' ? 'YcmCompleter GoToDeclaration' : 'gdec'
