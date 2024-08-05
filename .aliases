@@ -1,12 +1,37 @@
-# Easier navigation: ..., ...., .....
-alias ...="cd ../.."
-alias ....="cd ../../.."
-alias .....="cd ../../../.."
+# get distro
+if [ "$(uname)" == "Darwin" ]; then
+  DISTRO="macOS"
+elif [ -f /etc/os-release ]; then
+  . /etc/os-release
+  DISTRO=$ID
+elif [ -f /etc/lsb-release ]; then
+  . /etc/lsb-release
+  DISTRO=$DISTRIB_ID
+else
+  DISTRO=$(uname -s)
+fi
+
+# verbose output
+alias cp="cp -v"
+alias mv="mv -v"
+alias rm="rm -v"
+alias mkdir="mkdir -pv"
+alias wget="wget -c"
+alias qfind="find . -name"
 
 # Shortcuts
-alias dl="cd ~/Downloads"
-alias dt="cd ~/Desktop"
-alias dp="cd ~/Projects"
+case "$DISTRO" in
+  ubuntu)
+    alias dp="cd ~/Projects"
+    alias ds="cd ~/Scripts"
+    alias dl="cd ~/Libraries"
+    ;;
+  *)
+    alias dp="cd ~/projects"
+    alias ds="cd ~/scripts"
+    alias dl="cd ~/libraries"
+    ;;
+esac
 
 # Detect which `ls` flavor is in use
 if ls --color > /dev/null 2>&1; then # GNU `ls`
@@ -16,17 +41,20 @@ else # OS X `ls`
 fi
 
 # List in color; all files colorized in long format; only directories
+alias l="ls -lAFh ${colorflag}"
+alias ll="l"
 alias ls="ls ${colorflag}"
-alias l="ls -laF ${colorflag}"
 alias ld="ls -laF ${colorflag} | grep --color=never '^d'"
 
 # Always enable colored `grep` output
-alias grep='grep --color=auto'
-alias fgrep='fgrep --color=auto'
-alias egrep='egrep --color=auto'
+alias grep="grep --color=auto"
+alias fgrep="fgrep --color=auto"
+alias egrep="egrep --color=auto"
 
-# Get week number
-alias week='date +%V'
+# Time
+alias week="date +%V"
+alias epochtime="date +%s"
+alias timestamp='date "+%Y%m%dT%H%M%S"'
 
 # Stopwatch
 alias timer='echo "Timer started. Stop with Ctrl-D." && date && time cat && date'

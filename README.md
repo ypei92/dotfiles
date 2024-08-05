@@ -1,4 +1,4 @@
-# Config files when setting up new macOS/Linux systems
+# Dotfiles when setting up new macOS/Linux systems
 
 Including catalog:
 **.vim**
@@ -8,6 +8,11 @@ Including catalog:
 **.gitconfig**
 **.inputrc**
 **.aliases**
+
+08/04/24 update:
+1. Incorporate oh-my-bash aliases to `.aliases`
+2. Update to the latest bash-git-prompt and dracula.tmux (both customized)
+3. Minor updates
 
 12/20/23 update:
 Refine scripts

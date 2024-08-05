@@ -1,11 +1,15 @@
 [user]
     name = ypei
+    email = ypei@utexas.edu
 
 [core]
     editor = vim
 
 [merge]
     tool = vimdiff
+
+[github]
+    user = ypei92
 
 [alias]
     graph = log --graph --oneline --decorate --color
@@ -15,3 +19,5 @@
     status = auto
     branch = auto
     interactive = auto
+    ui = true
+    pager = true

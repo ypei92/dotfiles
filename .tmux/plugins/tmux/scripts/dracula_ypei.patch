@@ -1,0 +1,45 @@
+diff --git a/scripts/dracula.sh b/scripts/dracula.sh
+index 38ca2cf..3f31f18 100755
+--- a/scripts/dracula.sh
++++ b/scripts/dracula.sh
+@@ -47,6 +47,12 @@ main()
+   pink='#ff79c6'
+   yellow='#f1fa8c'
+ 
++  # (ypei) Custom color
++  dark_blue="#1453AD"
++  level2=colour36
++  level1=colour29
++  level0=colour23
++
+   # Handle left icon configuration
+   case $show_left_icon in
+     smiley)
+@@ -117,18 +123,21 @@ main()
+   fi
+   tmux set-option -g pane-border-style "fg=${gray}"
+ 
+-  # message styling
+-  tmux set-option -g message-style "bg=${gray},fg=${white}"
++  # (ypei) message styling
++  # tmux set-option -g message-style "bg=${gray},fg=${white}"
++  tmux set-option -g message-style "bg=${level1},fg=${white}"
+ 
+-  # status bar
+-  tmux set-option -g status-style "bg=${gray},fg=${white}"
++  # (ypei) status bar
++  # tmux set-option -g status-style "bg=${gray},fg=${white}"
++  tmux set-option -g status-style "bg=${level0},fg=${white}"
+ 
+-  # Status left
++  # (ypei) Status left
+   if $show_powerline; then
+     tmux set-option -g status-left "#[bg=${green},fg=${dark_gray}]#{?client_prefix,#[bg=${yellow}],} ${left_icon} #[fg=${green},bg=${gray}]#{?client_prefix,#[fg=${yellow}],}${left_sep}"
+     powerbg=${gray}
+   else
+-    tmux set-option -g status-left "#[bg=${green},fg=${dark_gray}]#{?client_prefix,#[bg=${yellow}],} ${left_icon}"
++    # tmux set-option -g status-left "#[bg=${green},fg=${dark_gray}]#{?client_prefix,#[bg=${yellow}],} ${left_icon}"
++    tmux set-option -g status-left "#[bg=${dark_blue},fg=${white}]#{?client_prefix,#[bg=${yellow}],} ${left_icon}#[fg=${white},bg=${level1}]#[fg=${white},bg=${level2},bold] #S "
+   fi
+ 
+   # Status right
