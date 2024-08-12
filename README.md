@@ -16,6 +16,7 @@ Including catalog:
 3. Add get_distro.sh to get OS distro name -> if-statement conditioning on distro names, e.g. prompt distro icon
 4. Set up `lsd` [(LSDeluxe)](https://github.com/lsd-rs/lsd), update aliases
 5. Update `.vimrc`: ruler highlight, truecolor setting 
+6. Finalize prompt design (mainly color, placement and icon)
 
 08/04/24 update:
 1. Incorporate oh-my-bash aliases to `.aliases`

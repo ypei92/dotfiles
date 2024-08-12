@@ -19,7 +19,7 @@ override_git_prompt_colors() {
     USER_PREFIX+="\[${userStyle}\]\u";        # username
     USER_PREFIX+="\[${White}\]@";
     USER_PREFIX+="\[${hostStyle}\]\h";        # host
-    USER_PREFIX+="${Yellow}[${DISTRO_ICON}]"  # distro icon
+    USER_PREFIX+="${Yellow}[${DISTRO_ICON}]"; # distro icon
     USER_PREFIX+="\[${White}\]: ";
 
     ## These are the color definitions used by gitprompt.sh
