@@ -28,6 +28,9 @@ do
 done;
 unset file;
 
+# truecolor support. (TODO) add condition to set this env
+export COLORTERM=truecolor
+
 # Add colored output to different file types + gcc output
 eval `dircolors ~/.dir_colors`
 

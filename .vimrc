@@ -15,9 +15,11 @@ filetype plugin indent on   " load file type plugin and related indent info
 
 "" Syntax and theme
 syntax on
-set t_Co=256
 set background=dark
-colorscheme solarized
+if (has("termguicolors"))
+  set termguicolors
+endif
+colorscheme solarized8
 set cursorline
 
 set confirm                 "Pop up confirmation when editing RO or unsaved
@@ -40,15 +42,14 @@ set cmdheight=2
 set scrolloff=3
 
 "" Turn off annoying error sound
-set novisualbell
-set noerrorbells
+set belloff=all
 
 "" Configure backspace to be able to across two lines
 set backspace=2
 set whichwrap+=<,>,h,l
 
 "" Tab and indent
-set tabstop=2               "Let tab equals 4 spaces
+set tabstop=2               "Let tab equals 2 spaces
 set softtabstop=2
 set shiftwidth=2
 set expandtab
@@ -86,11 +87,9 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#tab_nr_type = 1        "tab number
 let g:airline#extensions#tabline#show_tab_nr = 1
 let g:airline#extensions#tabline#formatter = 'default'
-"let g:airline#extensions#tmuxline#enabled = 0
 
 let g:airline#extensions#hunks#enabled = 1
 let g:airline#extensions#hunks#hunk_symbols = ['+', '~', '-']
-"let g:airline#extensions#hunks#non_zero_only = 0
 
 "" Clear buffer automatically after a tab is closed
 autocmd BufDelete * call airline#extensions#tabline#buflist#invalidate()

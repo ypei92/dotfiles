@@ -9,6 +9,9 @@ Including catalog:
 **.inputrc**
 **.aliases**
 
+08/11/24 update:
+1. Add truecolors setting for terminal, vim and tmux 
+
 08/04/24 update:
 1. Incorporate oh-my-bash aliases to `.aliases`
 2. Update to the latest bash-git-prompt and dracula.tmux (both customized)
