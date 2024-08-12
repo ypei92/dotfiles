@@ -32,9 +32,7 @@ unset file;
 export COLORTERM=truecolor
 
 # Add colored output to different file types + gcc output
-if ! command -v "lsd" &> /dev/null; then
-  eval `dircolors ~/.dir_colors`
-fi
+eval `dircolors ~/.dir_colors`
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
