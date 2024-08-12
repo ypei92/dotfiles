@@ -20,51 +20,52 @@ if (has("termguicolors"))
   set termguicolors
 endif
 colorscheme solarized8
+
+"" Show line number, command, status line and so on
 set cursorline
-
-set confirm                 "Pop up confirmation when editing RO or unsaved
-set wildmenu                "For auto filling   FIXME:don't know what that is
+set number                  " relativenumber
+set history=1024            " The length of the history need to be recorded
 set encoding=utf-8
-
-"" Show line number, command, status line and so on"
-set history=1024            "The length of the history need to be recorded
-set ruler
-set rulerformat=%20(%2*%<%f%=\ %m%r\ %3l\ %c\ %p%%%)
-set colorcolumn=80          "draw a vertical colored line at 80
-highlight ColorColumn ctermbg=red
-"set colorcolumn=120        "draw a vertical colored line at 120
-set number
-"set relativenumber
+set confirm                 " Pop up confirmation when editing RO or unsaved
+set wildmenu                " For auto filling
 set showcmd
 set showmode
-set laststatus=2
+set laststatus=2            " Always show the status line
 set cmdheight=2
 set scrolloff=3
+set ambiwidth=double        " Set width of a chinese character
+
+"" Set ruler at 80
+set ruler
+set rulerformat=%20(%2*%<%f%=\ %m%r\ %3l\ %c\ %p%%%)
+set colorcolumn=80          "Draw a vertical colored line at 80
+"highlight ColorColumn ctermbg=NONE guibg=#1453AD  "# d04c14 iconic red
 
 "" Turn off annoying error sound
 set belloff=all
+set visualbell
+set t_vb=
 
 "" Configure backspace to be able to across two lines
 set backspace=2
 set whichwrap+=<,>,h,l
 
 "" Tab and indent
-set tabstop=2               "Let tab equals 2 spaces
+set tabstop=2               " Let tab equals 2 spaces
 set softtabstop=2
 set shiftwidth=2
 set expandtab
-set smartindent             "smart indent for C
+set smartindent             " Smart indent for C
 set autoindent
 set iskeyword+=_,$,@,%,#,-
 set textwidth=80
-"set nowrap
 
 "" Text search and replace
-set showmatch               "Highlight matched parenthesis
-set incsearch               "Highlight in process
-set hlsearch                "Highlight the string found
-set ignorecase              "Ignore case when searching
-set smartcase               "Case match force active when uppercase entere
+set showmatch               " Highlight matched parenthesis
+set incsearch               " Highlight in process
+set hlsearch                " Highlight the string found
+set ignorecase              " Ignore case when searching
+set smartcase               " Case match force active when uppercase entere
 set magic
 set nowrapscan
 set listchars=tab:\|\ ,trail:.,extends:>,precedes:<,eol:$
@@ -74,14 +75,7 @@ set mouse=a
 set selection=exclusive
 set selectmode=mouse,key
 
-"" Set width of a chinese character
-set ambiwidth=double
-
-"" Status line config
-set laststatus=2            "always show the status line
-
 "" Vim airline plugin setting
-"let g:airline_powerline_fonts = 1
 let g:airline_theme='cobalt2'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#tab_nr_type = 1        "tab number

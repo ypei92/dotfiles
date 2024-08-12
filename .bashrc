@@ -22,7 +22,7 @@ shopt -s checkwinsize
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
 # alias + prompt
-for file in ~/{.aliases,.bash-git-prompt/gitprompt.sh};
+for file in ~/{.bash-git-prompt/gitprompt.sh,.aliases};
 do
     [ -r "$file" ] && [ -f "$file" ] && source "$file";
 done;
@@ -32,7 +32,9 @@ unset file;
 export COLORTERM=truecolor
 
 # Add colored output to different file types + gcc output
-eval `dircolors ~/.dir_colors`
+if ! command -v "lsd" &> /dev/null; then
+  eval `dircolors ~/.dir_colors`
+fi
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile

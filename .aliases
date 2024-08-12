@@ -1,16 +1,3 @@
-# get distro
-if [ "$(uname)" == "Darwin" ]; then
-  DISTRO="macOS"
-elif [ -f /etc/os-release ]; then
-  . /etc/os-release
-  DISTRO=$ID
-elif [ -f /etc/lsb-release ]; then
-  . /etc/lsb-release
-  DISTRO=$DISTRIB_ID
-else
-  DISTRO=$(uname -s)
-fi
-
 # verbose output
 alias cp="cp -v"
 alias mv="mv -v"
@@ -20,7 +7,7 @@ alias wget="wget -c"
 alias qfind="find . -name"
 
 # Shortcuts
-case "$DISTRO" in
+case "$DISTRO" in  # depend on ~/.bash-git-prompt/get_distro.sh
   ubuntu)
     alias dp="cd ~/Projects"
     alias ds="cd ~/Scripts"
@@ -33,18 +20,26 @@ case "$DISTRO" in
     ;;
 esac
 
-# Detect which `ls` flavor is in use
-if ls --color > /dev/null 2>&1; then # GNU `ls`
-	colorflag="--color"
-else # OS X `ls`
-	colorflag="-G"
-fi
+# LS aliases conditioned on whether lsd is installed
+if command -v "lsd" &> /dev/null; then
+  alias ls='lsd'
+  alias l='ls -l'
+  alias la='ls -al'
+  alias lt='ls --tree'
 
-# List in color; all files colorized in long format; only directories
-alias l="ls -lAFh ${colorflag}"
-alias ll="l"
-alias ls="ls ${colorflag}"
-alias ld="ls -laF ${colorflag} | grep --color=never '^d'"
+else
+  # Detect which `ls` flavor is in use
+  if ls --color > /dev/null 2>&1; then # GNU `ls`
+	  colorflag="--color"
+  else # OS X `ls`
+	  colorflag="-G"
+  fi
+
+  alias l="ls -lAFh ${colorflag}"
+  alias ll="l"
+  alias ls="ls ${colorflag}"
+  alias ld="ls -laF ${colorflag} | grep --color=never '^d'"
+fi
 
 # Always enable colored `grep` output
 alias grep="grep --color=auto"

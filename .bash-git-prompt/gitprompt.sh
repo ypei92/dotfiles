@@ -4,6 +4,7 @@
 # - always use ${array[@]:offset:length} syntax for array indexing
 
 # ypei: source customized config file
+source ~/.bash-git-prompt/get_distro.sh
 source ~/.bash-git-prompt/.git-prompt-config.sh
 
 function async_run() {

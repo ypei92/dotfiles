@@ -38,8 +38,8 @@ override_git_prompt_colors() {
                                            # symbols for ahead and behind
 
     ## Indicator if the last command returned with an exit code of 0 or not
-    GIT_PROMPT_COMMAND_OK="${Bold}${Green}"
-    GIT_PROMPT_COMMAND_FAIL="${Bold}${Red}"  # "${Red}✘-_LAST_COMMAND_STATE_ "
+    GIT_PROMPT_COMMAND_OK="${Bold}${Green}${DISTRO_ICON} "
+    GIT_PROMPT_COMMAND_FAIL="${Bold}${Red}${DISTRO_ICON} "  # "${Red}✘-_LAST_COMMAND_STATE_ "
 
     ## Number of versions ahead or behind the origin
     GIT_PROMPT_UPSTREAM=""
