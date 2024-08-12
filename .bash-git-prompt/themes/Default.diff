@@ -1,0 +1,18 @@
+diff --git a/.bash-git-prompt/themes/Default.bgptheme b/.bash-git-prompt/themes/Default.bgptheme
+index fbc22ab..bccf366 100644
+--- a/.bash-git-prompt/themes/Default.bgptheme
++++ b/.bash-git-prompt/themes/Default.bgptheme
+@@ -78,10 +78,11 @@ define_undefined_git_prompt_colors() {
+   # 3) gitstatus.py (Unsupported, lack features found in the bash versions)
+   if [ -z "${GIT_PROMPT_STATUS_COMMAND+x}" ]; then GIT_PROMPT_STATUS_COMMAND="gitstatus.sh"; fi    # Point out the command to get the git status from
+ 
+-  # template for displaying the current virtual environment
++  # (ypei) template for displaying the current virtual environment
+   # use the placeholder _VIRTUALENV_ will be replaced with
+   # the name of the current virtual environment (currently CONDA and VIRTUAL_ENV)
+-  if [ -z "${GIT_PROMPT_VIRTUALENV+x}" ]; then GIT_PROMPT_VIRTUALENV="(${Blue}_VIRTUALENV_${ResetColor}) "; fi
++  # if [ -z "${GIT_PROMPT_VIRTUALENV+x}" ]; then GIT_PROMPT_VIRTUALENV="(${Blue}_VIRTUALENV_${ResetColor}) "; fi
++  if [ -z "${GIT_PROMPT_VIRTUALENV+x}" ]; then GIT_PROMPT_VIRTUALENV="(${Blue} _VIRTUALENV_${ResetColor}) "; fi
+ 
+   # template for displaying the current remote tracking branch
+   # use the placeholder _UPSTREAM_ will be replaced with
