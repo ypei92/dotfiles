@@ -8,9 +8,14 @@ Including catalog:
 **.gitconfig**
 **.inputrc**
 **.aliases**
+**.config**
 
 08/11/24 update:
-1. Add truecolors setting for terminal, vim and tmux 
+1. Add truecolors setting for terminal env, Vim and Tmux 
+2. Add solarized8.vim as the new color theme
+3. Add get_distro.sh to get OS distro name -> if-statement conditioning on distro names, e.g. prompt distro icon
+4. Set up `lsd` [(LSDeluxe)](https://github.com/lsd-rs/lsd), update aliases
+5. Update `.vimrc`: ruler highlight, truecolor setting 
 
 08/04/24 update:
 1. Incorporate oh-my-bash aliases to `.aliases`
