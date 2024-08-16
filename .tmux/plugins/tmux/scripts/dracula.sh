@@ -48,10 +48,26 @@ main()
   yellow='#f1fa8c'
 
   # (ypei) Custom color
-  dark_blue="#1453AD"
-  level2=colour36
-  level1=colour29
-  level0=colour23
+  dark_blue="#1453AD"  # easter egg
+  if [ "$COLORTERM" == "truecolor" ]; then
+    ypei_fg2="#223b54"
+    ypei_bg2="#56bf8b"
+
+    ypei_fg1="#e5ebf1"
+    ypei_bg1="#405c79"
+
+    ypei_fg0="#bfbf56"
+    ypei_bg0="#223b54"
+  else
+    ypei_fg2=$white
+    ypei_bg2=colour36
+
+    ypei_fg1=$white
+    ypei_bg1=colour29
+
+    ypei_fg0=$white
+    ypei_bg0=colour23
+  fi
 
   # Handle left icon configuration
   case $show_left_icon in
@@ -97,8 +113,11 @@ main()
       flags=""
       current_flags="";;
     true)
-      flags="#{?window_flags,#[fg=${dark_purple}]#{window_flags},}"
-      current_flags="#{?window_flags,#[fg=${light_purple}]#{window_flags},}"
+      # (ypei)
+      # flags="#{?window_flags,#[fg=${dark_purple}]#{window_flags},}"
+      # current_flags="#{?window_flags,#[fg=${light_purple}]#{window_flags},}"
+      flags="#{?window_flags,#[fg=${white}]#{window_flags},}"
+      current_flags="#{?window_flags,#[fg=${white}]#{window_flags},}"
   esac
 
   # sets refresh interval to every 5 seconds
@@ -125,11 +144,11 @@ main()
 
   # (ypei) message styling
   # tmux set-option -g message-style "bg=${gray},fg=${white}"
-  tmux set-option -g message-style "bg=${level1},fg=${white}"
+  tmux set-option -g message-style "bg=${ypei_bg2},fg=${ypei_fg2}"
 
   # (ypei) status bar
   # tmux set-option -g status-style "bg=${gray},fg=${white}"
-  tmux set-option -g status-style "bg=${level0},fg=${white}"
+  tmux set-option -g status-style "bg=${ypei_bg0},fg=${ypei_fg0}"
 
   # (ypei) Status left
   if $show_powerline; then
@@ -137,7 +156,7 @@ main()
     powerbg=${gray}
   else
     # tmux set-option -g status-left "#[bg=${green},fg=${dark_gray}]#{?client_prefix,#[bg=${yellow}],} ${left_icon}"
-    tmux set-option -g status-left "#[bg=${dark_blue},fg=${white}]#{?client_prefix,#[bg=${yellow}],} ${left_icon}#[fg=${white},bg=${level1}]#[fg=${white},bg=${level2},bold] #S "
+    tmux set-option -g status-left "#[bg=${dark_blue},fg=${white}]#{?client_prefix,#[bg=${yellow}],} ${left_icon}#[fg=${white},bg=${level1}]#[fg=${ypei_fg2},bg=${ypei_bg2},bold] #S "
   fi
 
   # Status right
@@ -296,14 +315,17 @@ main()
     fi
   done
 
-  # Window option
+  # (ypei) Window option: fg
   if $show_powerline; then
     tmux set-window-option -g window-status-current-format "#[fg=${gray},bg=${dark_purple}]${left_sep}#[fg=${white},bg=${dark_purple}] #I #W${current_flags} #[fg=${dark_purple},bg=${gray}]${left_sep}"
   else
-    tmux set-window-option -g window-status-current-format "#[fg=${white},bg=${dark_purple}] #I #W${current_flags} "
+    # tmux set-window-option -g window-status-current-format "#[fg=${white},bg=${dark_purple}] #I #W${current_flags} "
+    tmux set-window-option -g window-status-current-format "#[fg=${ypei_fg0},bg=${dark_purple}] #I #W${current_flags} "
   fi
 
-  tmux set-window-option -g window-status-format "#[fg=${white}]#[bg=${gray}] #I #W${flags}"
+  # (ypei) Window option: bg
+  # tmux set-window-option -g window-status-format "#[fg=${white}]#[bg=${gray}] #I #W${flags}"
+  tmux set-window-option -g window-status-format "#[fg=${ypei_fg0}]#[bg=${ypei_bg0}] #I #W${flags}"
   tmux set-window-option -g window-status-activity-style "bold"
   tmux set-window-option -g window-status-bell-style "bold"
 }

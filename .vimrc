@@ -3,11 +3,12 @@ filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 
 call vundle#begin()
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'tpope/vim-fugitive'
-Plugin 'mhinz/vim-signify'
+Plugin 'VundleVim/Vundle.vim'           " Package management
+Plugin 'vim-airline/vim-airline'        " Status line
+Plugin 'vim-airline/vim-airline-themes' " Status line theme
+Plugin 'tpope/vim-fugitive'             " Git
+Plugin 'mhinz/vim-signify'              " Line difference
+Plugin 'ctrlpvim/ctrlp.vim'             " Fuzzy search
 Plugin 'ycm-core/YouCompleteMe'
 call vundle#end()
 
@@ -18,8 +19,10 @@ syntax on
 set background=dark
 if (has("termguicolors"))
   set termguicolors
+  colorscheme solarized8
+else
+  colorscheme solarized
 endif
-colorscheme solarized8
 
 "" Show line number, command, status line and so on
 set cursorline
@@ -76,7 +79,7 @@ set selection=exclusive
 set selectmode=mouse,key
 
 "" Vim airline plugin setting
-let g:airline_theme='cobalt2'
+let g:airline_theme='base16_harmonic16'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#tab_nr_type = 1        "tab number
 let g:airline#extensions#tabline#show_tab_nr = 1

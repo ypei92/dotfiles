@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # get distro
 if [ "$(uname)" == "Darwin" ]; then
   DISTRO="macOS"
