@@ -10,23 +10,29 @@ Including catalog:
 **.aliases**
 **.config**
 
-08/11/24 update:
-1. Add truecolors setting for terminal env, Vim and Tmux 
+***08/15/24 update***:
+1. Choose Vim truecolor theme to base16_harmonic16
+2. Match Tmux truecolor theme to Vim
+3. Condition Tmux color setting to be conditioned on `$COLORTERM`
+4. Add [ctrlp.vim](https://github.com/ctrlpvim/ctrlp.vim)
+
+***08/11/24 update***:
+1. Add truecolors setting for terminal env, Vim and Tmux
 2. Add solarized8.vim as the new color theme
 3. Add get_distro.sh to get OS distro name -> if-statement conditioning on distro names, e.g. prompt distro icon
 4. Set up `lsd` [(LSDeluxe)](https://github.com/lsd-rs/lsd), update aliases
-5. Update `.vimrc`: ruler highlight, truecolor setting 
+5. Update `.vimrc`: ruler highlight, truecolor setting
 6. Finalize prompt design (mainly color, placement and icon)
 
-08/04/24 update:
+***08/04/24*** update:
 1. Incorporate oh-my-bash aliases to `.aliases`
 2. Update to the latest bash-git-prompt and dracula.tmux (both customized)
 3. Minor updates
 
-12/20/23 update:
+***12/20/23*** update:
 Refine scripts
 
-10/15/21 update:
+***10/15/21*** update:
 Add YouCompleteMe to vim; update .vimrc by adding commands using coabbrev
 Add bash-completion to bash, update macOS LSCOLORS;
 Add plugins to tmux: tpm, sidebar, resurrect, customized dracula theme
