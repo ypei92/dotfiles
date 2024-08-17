@@ -223,13 +223,13 @@ main()
 
     # (ypei) Disable on Cygwin
     # elif [ $plugin = "cpu-usage" ]; then
-    elif [ $plugin = "cpu-usage" ] && [ $DISTRO != "CYGWIN*"]; then
+    elif [ $plugin = "cpu-usage" ] && [ $DISTRO != "CYGWIN*" ]; then
       IFS=' ' read -r -a colors <<< $(get_tmux_option "@dracula-cpu-usage-colors" "orange dark_gray")
       script="#($current_dir/cpu_info.sh)"
 
     # (ypei) Disable on Cygwin
     # elif [ $plugin = "ram-usage" ]; then
-    elif [ $plugin = "ram-usage" ] && [ $DISTRO != "CYGWIN*"]; then
+    elif [ $plugin = "ram-usage" ] && [ $DISTRO != "CYGWIN*" ]; then
       IFS=' ' read -r -a colors <<< $(get_tmux_option "@dracula-ram-usage-colors" "cyan dark_gray")
       script="#($current_dir/ram_info.sh)"
 

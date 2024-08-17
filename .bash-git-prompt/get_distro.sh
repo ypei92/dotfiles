@@ -1,5 +1,3 @@
-#!/bin/bash
-
 # get distro
 if [ "$(uname)" == "Darwin" ]; then
   DISTRO="macOS"
@@ -29,3 +27,6 @@ case "$DISTRO" in
     ;;
 esac
 
+# export var
+export DISTRO
+export DISTRO_ICON
