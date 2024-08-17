@@ -17,7 +17,7 @@ filetype plugin indent on   " load file type plugin and related indent info
 "" Syntax and theme
 syntax on
 set background=dark
-if (has("termguicolors"))
+if (has("termguicolors")) && $COLORTERM == "truecolor"
   set termguicolors
   colorscheme solarized8
 else

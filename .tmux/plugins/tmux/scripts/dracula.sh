@@ -59,14 +59,24 @@ main()
     ypei_fg0="#bfbf56"
     ypei_bg0="#223b54"
   else
-    ypei_fg2=$white
-    ypei_bg2=colour36
+    ypei_fg2=colour23
+    ypei_bg2=colour72
 
-    ypei_fg1=$white
-    ypei_bg1=colour29
+    ypei_fg1=colour189
+    ypei_bg1=colour60
 
-    ypei_fg0=$white
+    ypei_fg0=colour143
     ypei_bg0=colour23
+
+    # Ancient version
+    # ypei_fg2=$white
+    # ypei_bg2=colour36
+
+    # ypei_fg1=$white
+    # ypei_bg1=colour29
+
+    # ypei_fg0=$white
+    # ypei_bg0=colour23
   fi
 
   # Handle left icon configuration
@@ -211,11 +221,15 @@ main()
       IFS=' ' read -r -a colors <<< $(get_tmux_option "@dracula-gpu-power-draw-colors" "green dark_gray")
       script="#($current_dir/gpu_power.sh)"
 
-    elif [ $plugin = "cpu-usage" ]; then
+    # (ypei) Disable on Cygwin
+    # elif [ $plugin = "cpu-usage" ]; then
+    elif [ $plugin = "cpu-usage" ] && [ $DISTRO != "CYGWIN*"]; then
       IFS=' ' read -r -a colors <<< $(get_tmux_option "@dracula-cpu-usage-colors" "orange dark_gray")
       script="#($current_dir/cpu_info.sh)"
 
-    elif [ $plugin = "ram-usage" ]; then
+    # (ypei) Disable on Cygwin
+    # elif [ $plugin = "ram-usage" ]; then
+    elif [ $plugin = "ram-usage" ] && [ $DISTRO != "CYGWIN*"]; then
       IFS=' ' read -r -a colors <<< $(get_tmux_option "@dracula-ram-usage-colors" "cyan dark_gray")
       script="#($current_dir/ram_info.sh)"
 

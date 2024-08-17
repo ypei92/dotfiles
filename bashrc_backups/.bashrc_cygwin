@@ -21,23 +21,19 @@
 # would be benifitial to all, please feel free to send
 # a patch to the cygwin mailing list
 
-# User dependent .bashrc file
+# User dependent .bashrc file + truecolor support
 export TERM='xterm-256color';
+export COLORTERM=truecolor
+source ~/plugins/mintty-colors-solarized/sol.dark
 
-source ~/UTCS/plugins/mintty-colors-solarized/sol.dark
-
-for file in ~/{.aliases,.bash-git-prompt/gitprompt.sh};
+# alias + prompt
+for file in ~/{.bash-git-prompt/gitprompt.sh,.aliases};
 do
     [ -r "$file" ] && [ -f "$file" ] && source "$file";
 done;
 unset file;
 
-# If not running interactively, don't do anything
-alias ls='ls --color=auto'
+# Add colored output to different file types + gcc output
 eval `dircolors ~/.dir_colors`
-
-BoldAsFont=yes
-Font=Consolas
-FontHeight=12
 
 [[ "$-" != *i* ]] && return

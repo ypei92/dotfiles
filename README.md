@@ -11,10 +11,13 @@ Including catalog:
 **.config**
 
 ***08/15/24 update***:
-1. Choose Vim truecolor theme to base16_harmonic16
-2. Match Tmux truecolor theme to Vim
-3. Condition Tmux color setting to be conditioned on `$COLORTERM`
-4. Add [ctrlp.vim](https://github.com/ctrlpvim/ctrlp.vim)
+1. Choose vim truecolor theme to base16_harmonic16
+2. Match tmux truecolor theme to vim
+3. Condition vim color setting to be conditioned on `$COLORTERM`
+4. Condition tmux color setting to be conditioned on `$COLORTERM`
+5. Add [ctrlp.vim](https://github.com/ctrlpvim/ctrlp.vim)
+6. Enable Cygwin truecolor and solve compatibility issues
+7. Add scripts folder to record efforts of building from source
 
 ***08/11/24 update***:
 1. Add truecolors setting for terminal env, Vim and Tmux
