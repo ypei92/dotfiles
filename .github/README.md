@@ -10,6 +10,11 @@ Including catalog:
 **.aliases**
 **.config**
 
+***08/22/24 update***:
+1. Re-arrange files to use [yadm](https://yadm.io/)
+2. Add scripts to cover auto and manual setup stages of Debian-based OS
+3. Add scripts to setup Debian-based LXC templates
+
 ***08/15/24 update***:
 1. Choose vim truecolor theme to base16_harmonic16
 2. Match tmux truecolor theme to vim
