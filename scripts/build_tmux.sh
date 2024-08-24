@@ -8,9 +8,9 @@ cd $HOME/packages
 wget https://github.com/libevent/libevent/releases/download/release-2.1.12-stable/libevent-2.1.12-stable.tar.gz
 wget https://invisible-mirror.net/archives/ncurses/ncurses-6.4.tar.gz
 wget https://github.com/tmux/tmux/releases/download/3.4/tmux-3.4.tar.gz
-tar -zxvf libevent-2.1.12-stable.tar.gz 
-tar -zxvf ncurses-6.4.tar.gz 
-tar -zxvf tmux-3.4.tar.gz 
+tar -zxvf libevent-2.1.12-stable.tar.gz
+tar -zxvf ncurses-6.4.tar.gz
+tar -zxvf tmux-3.4.tar.gz
 
 # libevent
 cd libevent-2.1.12-stable
