@@ -15,6 +15,7 @@ Including catalog:
 1. Replace .dir_colors with with .ls_colors (Reference: [vivid](https://github.com/sharkdp/vivid)) 
 2. Add `locale` generation to Proxmox VE CT template 
 3. Add tmux `tpm` auto-installation command
+4. Adjust scripts/ folder structure
 
 ***08/22/24 update***:
 1. Re-arrange files to use [yadm](https://yadm.io/)
