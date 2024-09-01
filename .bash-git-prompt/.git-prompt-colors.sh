@@ -10,7 +10,12 @@ override_git_prompt_colors() {
         userStyle="${Blue}";
     fi;
 
-    hostStyle="${Bold}${Green}";
+    # Differentiate the hostname when connected via SSH.
+    if [[ "${SSH_TTY}" ]]; then
+        hostStyle="${Bold}${Green}";
+    else
+        hostStyle="${Bold}${Yellow}";
+    fi;
     Time12a="[\$(date +%H:%M)]"
     PathShort="\w";
 
