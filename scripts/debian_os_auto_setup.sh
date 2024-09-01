@@ -63,5 +63,5 @@ source $HOME/.bashrc
 conda update -y conda
 conda create -y -n $CONDA_BASE_ENV python=3.10
 conda activate $CONDA_BASE_ENV
+conda install -y -c conda-forge conda-bash-completion  # alternative: set defaults in .condarc
 echo "conda activate $CONDA_BASE_ENV" >> ~/.bashrc
-# (TODO) Setup "-c conda-forge conda-bash-completion" for every env
