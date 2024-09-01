@@ -11,6 +11,10 @@ apt install sudo
 adduser ypei
 usermod -aG sudo ypei
 
+# setup locale
+locale-gen "en_US.UTF-8"
+dpkg-reconfigure locales
+
 # clean up apt
 apt clean && apt autoremove
 
@@ -18,9 +22,3 @@ apt clean && apt autoremove
 truncate -s 0 /etc/machine-id
 rm /etc/ssh/ssh_host_*
 rm -rf /tmp/*
-rm ~/.bash_history
-
-####################################################
-# Run this command only on clones: re-gen ssh keys #
-####################################################
-dpkg-reconfigure openssh-server
