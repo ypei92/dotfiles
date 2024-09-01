@@ -9,6 +9,12 @@ Including catalog:
 **.inputrc**
 **.aliases**
 **.config**
+**.ls_color**
+
+***09/01/24 update***:
+1. Replace .dir_colors with with .ls_colors (Reference: [vivid](https://github.com/sharkdp/vivid)) 
+2. Add `locale` generation to Proxmox VE CT template 
+3. Add tmux `tpm` auto-installation command
 
 ***08/22/24 update***:
 1. Re-arrange files to use [yadm](https://yadm.io/)
