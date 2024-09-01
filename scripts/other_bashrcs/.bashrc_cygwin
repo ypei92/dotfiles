@@ -27,13 +27,10 @@ export COLORTERM=truecolor
 source ~/plugins/mintty-colors-solarized/sol.dark
 
 # alias + prompt
-for file in ~/{.bash-git-prompt/gitprompt.sh,.aliases};
+for file in ~/{.bash-git-prompt/gitprompt.sh,.aliases,.ls_colors};
 do
     [ -r "$file" ] && [ -f "$file" ] && source "$file";
 done;
 unset file;
-
-# Add colored output to different file types + gcc output
-eval `dircolors ~/.dir_colors`
 
 [[ "$-" != *i* ]] && return
