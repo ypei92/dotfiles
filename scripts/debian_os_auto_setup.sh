@@ -48,11 +48,9 @@ fc-cache -fv
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 vim -c PluginInstall -c q -c q
 vim -c "source .vimrc" -c q
-python3 ~/.vim/bundle/YouCompleteMe/install.py --clangd-completer --verbose  # Conda won't work
+python3 ~/.vim/bundle/YouCompleteMe/install.py --clangd-completer --verbose  # conda won't work
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-tmux source ~/.tmux.conf
-# (TODO) Install tmux plugins programmatically
-# (TODO) Fix locale issue on Debian/Ubuntu minimal
+tmux new -d -s tmp "tmux source ~/.tmux.conf && ~/.tmux/plugins/tpm/scripts/install_plugins.sh"
 
 # Setup Conda for Python Dev
 echo "Setup miniconda3 ..."
