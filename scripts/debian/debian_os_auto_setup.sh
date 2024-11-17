@@ -12,7 +12,7 @@ CONDA_BASE_ENV="py310"
 # Install system level dependencies
 sudo apt update
 sudo apt dist-upgrade
-sudo apt install -y vim-nox git tmux lsd unzip yadm python3 python3-dev pciutils cmake build-essential
+sudo apt install -y vim-nox git tmux lsd unzip fontconfig yadm python3 python3-dev pciutils cmake build-essential
 
 # Prepare folder
 cd $HOME
