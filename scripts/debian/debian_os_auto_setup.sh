@@ -5,7 +5,8 @@ YADM_URL="https://github.com/ypei92/dotfiles.git"
 NERDFONT="FiraCode"
 NERDFONT_URL="https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/$NERDFONT.zip"
 FONT_DIR_LINUX="$HOME/.local/share/fonts/"
-CONDA_URL="https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh"
+ARCH="x86_64"
+CONDA_URL="https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-${ARCH}.sh"
 CONDA_DIR="$HOME/libraries/miniconda3/"
 CONDA_BASE_ENV="py310"
 
@@ -55,9 +56,9 @@ tmux new -d -s tmp "tmux source ~/.tmux.conf && ~/.tmux/plugins/tpm/scripts/inst
 # Setup Conda for Python Dev
 echo "Setup miniconda3 ..."
 mkdir -p $HOME/libraries/miniconda3
-wget $CONDA_URL -O $CONDA_DIR/miniconda.sh
-bash $CONDA_DIR/miniconda.sh -b -u -p $CONDA_DIR
-rm -rf $HOME/libraries/miniconda3/miniconda.sh
+wget $CONDA_URL -O $CONDA_DIR/miniconda3.sh
+bash $CONDA_DIR/miniconda3.sh -b -u -p $CONDA_DIR
+rm -rf $HOME/libraries/miniconda3/miniconda3.sh
 $CONDA_DIR/bin/conda init bash
 source $HOME/.bashrc
 conda update -y conda
