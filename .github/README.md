@@ -1,4 +1,4 @@
-# Dotfiles when setting up new macOS/Linux systems
+# Dotfiles + Scripts
 
 Including catalog:
 **.vim**
@@ -10,10 +10,15 @@ Including catalog:
 **.aliases**
 **.config**
 **.ls_color**
+**scripts**
+
+***03/30/25 update***:
+1. Add check-truecolor scripts
+2. Minor folder re-organization
 
 ***09/01/24 update***:
-1. Replace .dir_colors with with .ls_colors (Reference: [vivid](https://github.com/sharkdp/vivid)) 
-2. Add `locale` generation to Proxmox VE CT template 
+1. Replace .dir_colors with with .ls_colors (Reference: [vivid](https://github.com/sharkdp/vivid))
+2. Add `locale` generation to Proxmox VE CT template
 3. Add tmux `tpm` auto-installation command
 4. Adjust scripts/ folder structure
 
