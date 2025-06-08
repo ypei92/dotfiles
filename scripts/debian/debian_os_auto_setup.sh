@@ -3,12 +3,12 @@
 # Variables
 YADM_URL="https://github.com/ypei92/dotfiles.git"
 NERDFONT="FiraCode"
-NERDFONT_URL="https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/$NERDFONT.zip"
+NERDFONT_URL="https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/$NERDFONT.zip"
 FONT_DIR_LINUX="$HOME/.local/share/fonts/"
 ARCH="x86_64"
 CONDA_URL="https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-${ARCH}.sh"
 CONDA_DIR="$HOME/libraries/miniconda3/"
-CONDA_BASE_ENV="py310"
+CONDA_BASE_ENV="py312"
 
 # Install system level dependencies
 sudo apt update
@@ -49,7 +49,7 @@ fc-cache -fv
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 vim -c PluginInstall -c q -c q
 vim -c "source .vimrc" -c q
-python3 ~/.vim/bundle/YouCompleteMe/install.py --clangd-completer --verbose  # conda won't work
+python3 ~/.vim/bundle/YouCompleteMe/install.py --clangd-completer --verbose  # install in conda won't work
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 tmux new -d -s tmp "tmux source ~/.tmux.conf && ~/.tmux/plugins/tpm/scripts/install_plugins.sh"
 
@@ -62,7 +62,7 @@ rm -rf $HOME/libraries/miniconda3/miniconda3.sh
 $CONDA_DIR/bin/conda init bash
 source $HOME/.bashrc
 conda update -y conda
-conda create -y -n $CONDA_BASE_ENV python=3.10
+conda create -y -n $CONDA_BASE_ENV python=3.12
 conda activate $CONDA_BASE_ENV
 conda install -y -c conda-forge conda-bash-completion  # alternative: set defaults in .condarc
 echo "conda activate $CONDA_BASE_ENV" >> ~/.bashrc
