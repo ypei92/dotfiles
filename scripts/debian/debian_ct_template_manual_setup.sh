@@ -22,3 +22,9 @@ apt clean && apt autoremove
 truncate -s 0 /etc/machine-id
 rm /etc/ssh/ssh_host_*
 rm -rf /tmp/*
+
+# enable user ssh
+mkdir /home/ypei/.ssh
+touch /home/ypei/authorized_keys  # then copy the pub key
+chmod 700 /home/ypei/.ssh
+chmod 600 /home/ypei/.ssh/authorized_keys
