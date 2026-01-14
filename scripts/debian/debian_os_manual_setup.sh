@@ -7,6 +7,7 @@
 # As root during first boot in PVE console: re-gen ssh keys #
 #############################################################
 dpkg-reconfigure openssh-server
+systemctl restart ssh
 
 ###########
 # As user #

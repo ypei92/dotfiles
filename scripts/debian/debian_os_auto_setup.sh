@@ -61,8 +61,8 @@ bash $CONDA_DIR/miniconda3.sh -b -u -p $CONDA_DIR
 rm -rf $HOME/libraries/miniconda3/miniconda3.sh
 $CONDA_DIR/bin/conda init bash
 source $HOME/.bashrc
-conda update -y conda
-conda create -y -n $CONDA_BASE_ENV python=3.12
+conda update conda
+conda create -n $CONDA_BASE_ENV python=3.12
 conda activate $CONDA_BASE_ENV
-conda install -y -c conda-forge conda-bash-completion  # alternative: set defaults in .condarc
+conda install -c conda-forge conda-bash-completion  # alternative: set defaults in .condarc
 echo "conda activate $CONDA_BASE_ENV" >> ~/.bashrc
