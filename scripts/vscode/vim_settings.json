@@ -1,0 +1,271 @@
+{
+    "vim.handleKeys": {
+        "<C-d>": true,
+        "<C-s>": false,
+        "<C-z>": false
+    },
+    "workbench.colorTheme": "Solarized Dark",
+    "remote.autoForwardPortsSource": "hybrid",
+    "terminal.integrated.fontFamily": "FiraCode Nerd Font Mono",
+    "editor.fontFamily": "FiraCode Nerd Font Mono",
+    "editor.rulers": [
+        80
+    ],
+    "editor.renderWhitespace": "trailing",
+    "workbench.colorCustomizations": {
+        "editorRuler.foreground": "#dd0000",
+        "editorWhitespace.foreground": "#ff5555",
+        "editor.selectionBackground": "#a3dc7620",
+        "statusBar.background": "#5f00af",
+        "statusBar.noFolderBackground": "#5f00af",
+        "statusBar.debuggingBackground": "#5f00af",
+        "statusBar.foreground": "#ffffff",
+        "statusBar.debuggingForeground": "#ffffff"
+    },
+    // Cause flikcers remotely
+    "vim.statusBarColorControl": true,
+    // The moment that you yank for duration in ms
+    "vim.highlightedyank.duration": 1000,
+    "vim.highlightedyank.enable": true,
+    "vim.highlightedyank.color": "rgba(20, 83, 173, 1)", // 1453AD
+    "vim.highlightedyank.textColor": "rgba(253, 246, 227, 1)",
+    // Search related
+    "vim.hlsearch": true,
+    "vim.searchHighlightColor": "rgba(42, 161, 152, 0.75)", // python string
+    "vim.searchHighlightTextColor": "rgba(253, 246, 227, 1)",
+    "vim.searchMatchColor": "rgba(20, 83, 173, 1)", // 1453AD
+    "vim.searchMatchTextColor": "rgba(253, 246, 227, 1)",
+    // Cursor shapes
+    "vim.cursorStylePerMode.normal": "block",
+    "vim.cursorStylePerMode.insert": "line",
+    "vim.cursorStylePerMode.visual": "block-outline",
+    // Diff editor
+    "diffEditor.ignoreTrimWhitespace": false,
+    // Key bindings and navigation
+    "editor.peekWidgetDefaultFocus": "editor", // auto focus on editor
+    "vim.easymotion": true,
+    "vim.leader": ",",
+    "vim.insertModeKeyBindings": [],
+    "vim.insertModeKeyBindingsNonRecursive": [
+        {
+            "before": [
+                "j",
+                "j"
+            ],
+            "after": [
+                "<Esc>"
+            ]
+        },
+    ],
+    "vim.normalModeKeyBindings": [
+        {
+            "before": [
+                ">"
+            ],
+            "commands": [
+                "workbench.action.showCommands"
+            ]
+        },
+        {
+            "before": [
+                "<C-n>"
+            ],
+            "commands": [
+                ":nohl"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "e"
+            ],
+            "commands": [
+                "workbench.view.explorer"
+            ]
+        },
+        {
+            "before": [
+                "g",
+                "p",
+                "d"
+            ],
+            "commands": [
+                "editor.action.peekDefinition"
+            ]
+        },
+        {
+            "before": [
+                "g",
+                "h"
+            ],
+            "commands": [
+                "editor.action.showDefinitionPreviewHover"
+            ]
+        },
+        {
+            // List all references, focus on the sidebar
+            "before": [
+                "g",
+                "r"
+            ],
+            "commands": [
+                "editor.action.referenceSearch.trigger",
+                "togglePeekWidgetFocus"
+            ]
+        },
+        {
+            "before": [
+                "g",
+                "t"
+            ],
+            "commands": [
+                "editor.action.goToTypeDefinition"
+            ]
+        },
+        {
+            "before": [
+                "g",
+                "p",
+                "t"
+            ],
+            "commands": [
+                "editor.action.peekTypeDefinition"
+            ]
+        },
+        {
+            "before": [
+                "g",
+                "o"
+            ],
+            "after": [
+                "<C-o>"
+            ]
+        },
+        {
+            "before": [
+                "g",
+                "s"
+            ],
+            "after": [
+                "g",
+                "*",
+                "N"
+            ]
+        },
+    ],
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            "before": [
+                "t",
+                "k"
+            ],
+            "commands": [
+                ":tabnext"
+            ]
+        },
+        {
+            "before": [
+                "t",
+                "j"
+            ],
+            "commands": [
+                ":tabprev"
+            ]
+        },
+        {
+            "before": [
+                "t",
+                "h"
+            ],
+            "commands": [
+                ":tabfirst"
+            ]
+        },
+        {
+            "before": [
+                "t",
+                "l"
+            ],
+            "commands": [
+                ":tablast"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "h"
+            ],
+            "commands": [
+                "relatedFiles.openHeaderFile"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "b"
+            ],
+            "commands": [
+                "relatedFiles.openBuildFile"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "i"
+            ],
+            "commands": [
+                "relatedFiles.openSourceFile"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "d"
+            ],
+            "commands": [
+                "scm.toggleDiff"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "c"
+            ],
+            "commands": [
+                "copyFilePath"
+            ]
+        },
+    ],
+    "vim.visualModeKeyBindings": [],
+    "vim.visualModeKeyBindingsNonRecursive": [
+        {
+            "before": [
+                "p"
+            ],
+            "after": [
+                "p",
+                "g",
+                "v",
+                "y"
+            ]
+        }
+    ],
+    "vim.commandLineModeKeyBindings": [],
+    "vim.commandLineModeKeyBindingsNonRecursive": [
+        {
+            "before": [
+                "t",
+                "n"
+            ],
+            "after": [
+                "t",
+                "a",
+                "b",
+                "n",
+                "e",
+                "w",
+                " "
+            ]
+        }
+    ],
+}
