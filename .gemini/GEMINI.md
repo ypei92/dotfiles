@@ -1,5 +1,7 @@
 # Python Project Standards
 
+**Note**: These standards are designed for the general open-source community and represent modern best practices for that environment. They may not align with specific corporate standards, which vary by company.
+
 All new Python projects should follow this structure to ensure consistency, testability, and modern tool compatibility.
 
 ## Directory Structure
@@ -7,13 +9,14 @@ All new Python projects should follow this structure to ensure consistency, test
 1.  **`src/`**: Contains the application code in a package directory (e.g., `src/<package_name>/`). Must include an empty `__init__.py` to define the package.
 2.  **`tests/`**: Contains unit and integration tests using `pytest`.
 3.  **`pyproject.toml`**: The single source of truth for project metadata, dependencies, and tool configuration (Ruff, Mypy, Pytest).
-4.  **`.gitignore`**: Standard Python `.gitignore`. Must include vim temp files (e.g., `*.sw*`, `*.swo`, `*.swp`).
+4.  **`.gitignore`**: Standard Python `.gitignore`. Must include vim temp files (e.g., `*.sw*`).
 5.  **`README.md`**: Project overview, installation, and usage instructions.
 6.  **`LICENSE`**: MIT or Apache 2.0 license.
 
 ## Tooling & Quality Standards
 
-- **Package Management**: Use **uv** (within a conda environment) for dependency management and project environments.
+- **Environment Discovery**: At the start of a new conversation or session, check `.vscode/settings.json` for `python.defaultInterpreterPath` to identify and use the project's active conda environment.
+- **Package Management**: Use **uv** (within a conda environment) for dependency management and project environments. Always use the conda environment defined in `.vscode/settings.json` if it exists.
 - **Dependency Organization**: Separate dependencies logically in `pyproject.toml`. Application requirements go in `[project.dependencies]`, while development tools (pytest, ruff, mypy, pre-commit) must be placed in a separate dependency group (e.g., `[dependency-groups.dev]`).
 - **Data Validation**: Use **Pydantic** for runtime data validation and settings management.
 - **Type Checking**: Use **Mypy** for static type analysis. Configuration should be in `[tool.mypy]` in `pyproject.toml`.
@@ -39,5 +42,5 @@ When generating Python code or configuring project tools (specifically Ruff in `
 When asked to initialize a project, always generate the complete scaffolding. This includes:
 1.  **`pyproject.toml`**: Provide the exact contents, including metadata and `[tool.ruff]` and `[tool.mypy]` tables.
 2.  **`.pre-commit-config.yaml`**: Provide a basic configuration to run Ruff and Mypy.
-3.  **Initial Test**: Create a simple test file in `tests/` to verify the environment (e.g., `tests/test_placeholder.py`).
-4.  **Directory structure**: Create the `src/<package_name>/` and `tests/` directories. Ensure an empty `__init__.py` is placed inside the package directory.
+3.  **Directory structure**: Create the `src/<package_name>/` and `tests/` directories. Ensure an empty `__init__.py` is placed inside the package directory.
+4.  **Setup Commands**: Always provide a single, copy-pasteable bash snippet containing the commands (`mkdir`, `touch`) to create the directory structure and empty files before providing the file contents.
