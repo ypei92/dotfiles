@@ -44,7 +44,7 @@ $if Bash
   set bell-style none
 
   # or, don't beep at me - show me
-  set bell-style visible
+  # set bell-style visible
 
   # Expand homedir name
   set expand-tilde on

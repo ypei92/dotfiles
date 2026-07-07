@@ -1,7 +1,7 @@
 #!/bin/bash
 
 env_name=$CONDA_DEFAULT_ENV
-default_python_version=3.10
+default_python_version=3.12
 python_version="${1:-$default_python_version}"
 
 # deactivate, delete, re-create and activate
