@@ -1,1 +1,0 @@
-/home/ypei/.AGENTS.md
